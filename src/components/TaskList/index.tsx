@@ -1,8 +1,6 @@
 import { useTaskContext } from '../../context/TaskContext';
 import { List } from '../../type';
-import BoxTarget from '../BoxTarget';
 import Task from '../Task';
-
 interface Props {
   bgColor?: string;
   list: List;
@@ -26,15 +24,13 @@ const TaskList: React.FC<Props> = ({ list }) => {
 
       <div className='h-4'></div>
 
-      <BoxTarget list_id={list.id}>
-        <div className='flex flex-col gap-3 px-3 py-0 overflow-auto'>
-          {tasks
-            .filter((t) => t.list_id === list.id)
-            .map((task) => (
-              <Task key={task.id} task={task} />
-            ))}
-        </div>
-      </BoxTarget>
+      <div className='flex flex-col gap-3 px-3 py-0 overflow-auto'>
+        {tasks
+          .filter((t) => t.list_id === list.id)
+          .map((task) => (
+            <Task key={task.id} task={task} />
+          ))}
+      </div>
     </div>
   );
 };

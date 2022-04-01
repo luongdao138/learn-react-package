@@ -1,20 +1,15 @@
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 // import * as ReactDOMClient from 'react-dom/client';
-import { render } from "react-dom";
-import TaskProvider from "./context/TaskContext";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import { render } from 'react-dom';
+import TaskProvider from './context/TaskContext';
 
-const container = document.getElementById("root");
-
+const container = document.getElementById('root');
 render(
-  <DndProvider backend={HTML5Backend}>
-    <TaskProvider>
-      <App />
-    </TaskProvider>
-  </DndProvider>,
+  <TaskProvider>
+    <App />
+  </TaskProvider>,
   container
 );
 
