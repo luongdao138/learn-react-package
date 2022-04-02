@@ -17,12 +17,18 @@ export interface Task {
   list_id: string;
 }
 
-export interface DragItem {
-  item_id: string;
-  from_list: string;
-  type: ItemTypes;
+export interface ObjectList {
+  [key: string]: {
+    title: string;
+    items: Task[];
+    bg_color?: string;
+  };
 }
 
-export interface DnDItem extends DragItem {
-  to_list: string;
+export interface DnDItem {
+  item_id: string;
+  item_from_index: number;
+  item_to_index: number;
+  list__from_id: string;
+  list_to_id: string;
 }
